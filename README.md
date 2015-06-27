@@ -110,7 +110,7 @@ Once a tag object has been created, its HTML attributes can be modified by acces
 '<div id="myCSSid"></div>\n'
 ```
 
-Tag can be concatenated by the use of the simple + operator :
+Tags can be concatenated by the use of the simple + operator :
 
 ```python
 >>> twoDivs = div() + div()
