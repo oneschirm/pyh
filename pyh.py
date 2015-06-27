@@ -86,12 +86,22 @@ class Tag(list):
         result += '\n'
         return result
 
+    def make_result(self, n, v, result):
+        if n != 'txt' and n != 'open':
+            if n == 'cl': 
+                n = 'class'
+                result += ' %s="%s"' % (n, v)
+        return result
+
     def renderAtt(self):
         result = ''
-        for n, v in self.attributes.iteritems():
-            if n != 'txt' and n != 'open':
-                if n == 'cl': n = 'class'
-                result += ' %s="%s"' % (n, v)
+        try: 
+            for n, v in self.attributes.iteritems():
+                result = self.make_result(n,v,result)
+        except AttributeError as e:
+            # Python 3
+            for n, v in iter(self.attributes.items()):
+                result = self.make_result(n,v,result)
         return result
 
     def selfClose(self):
