@@ -23,7 +23,7 @@ tags = ['html', 'body', 'head', 'link', 'meta', 'div', 'p', 'form', 'legend',
         'fieldset', 'a', 'title', 'body', 'head', 'title', 'script', 'br', 'table',
         'ul', 'li', 'ol']
 
-selfClose = ['input', 'img', 'link', 'br']
+selfClose = ['input', 'img', 'link', 'br','hr']
 
 class Tag(list):
     tagname = ''
